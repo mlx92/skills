@@ -1,6 +1,6 @@
 ---
 name: product-doc-review
-description: Analyze, optimize, scope and schedule product documents. Use when user provides or uploads a product doc (PRD, requirement doc, feature spec) and wants to (1) review completeness and quality, (2) check feature requirements for clear boundaries and flows, (3) get design improvement suggestions, or (4) get a list of impacted features vs existing code with rough prioritization and timeline. Trigger on product document analysis, 产品文档分析, 优化, 目标划分, 排期.
+description: Analyze, optimize, scope and schedule product documents. Use when user provides or uploads a product doc (PRD, requirement doc, feature spec) and wants to (1) review completeness and quality, (2) check feature requirements for clear boundaries and flows, (3) get design improvement suggestions, or (4) get a list of impacted features vs existing code with rough prioritization, timeline and development time estimates. Trigger on product document analysis, 产品文档分析, 优化, 目标划分, 排期, 开发时间.
 ---
 
 # Product Document Review
@@ -60,10 +60,11 @@ Only when the user asks for 功能与排期 and codebase is available:
 2. **对照已有代码**：在项目中定位相关模块（如 `src/views/…`, `src/utils/api/…`, router, store）。对每个功能标注：**新建 / 改造现有 / 无直接对应**，并注明涉及文件或模块。
 3. **功能与排期**：  
    - 按依赖关系与优先级整理成有序功能列表。  
-   - 给出粗略排期（如按迭代/周），标注不确定处（如“依赖后端接口”）。  
+   - **开发时间**：对每个功能点（或合理分组）给出预估开发时间（如人天或人周），并汇总整体方案的总开发时间；标注估算依据或不确定处（如“依赖后端接口”）。  
+   - 给出粗略排期（如按迭代/周），与开发时间对应。  
    - 若文档无明确优先级，先按依赖和风险给出建议优先级，再排期。
 
-**Output**: Table or list of 功能 → 类型(新建/改造) → 涉及模块/文件 → 建议优先级/迭代；加一段简短排期说明与风险/假设。
+**Output**: Table or list of 功能 → 类型(新建/改造) → 涉及模块/文件 → **预估开发时间** → 建议优先级/迭代；加一段简短排期说明（含总开发时间）与风险/假设。
 
 ## Report structure
 
@@ -82,7 +83,7 @@ Produce one report with the following sections (omit Phase 4 if codebase or “�
 [Phase 3 critique and optimization list]
 
 ## 4. 功能与排期
-[Phase 4 impact list and schedule when requested]
+[Phase 4 impact list, 每项及整体的开发时间预估, and schedule when requested]
 ```
 
 Keep language consistent with the document (e.g. Chinese if the doc is in Chinese).
