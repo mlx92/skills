@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bugfix Summary"
+  short_description: "Generate concise bugfix summary notes for ZenTao use"
+  default_prompt: "Use $bugfix-summary to draft a concise 8-item bugfix summary and save it as a markdown file."
